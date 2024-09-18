@@ -1,0 +1,296 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+#logo {
+    background-color: #6fff52;
+    margin: 0; 
+}
+
+  nav{
+    list-style: none;
+    font-family: Lato, Arial, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  h1{
+    font-size: 2rem;
+    font-family: Lato, Arial, sans-serif;
+    position: relative;
+    left: 1vw;
+    width: 400px;
+    color: black;
+    max-width: 70%;
+  }
+
+  .on_screen{
+    float: right;
+    margin-right: 20px;
+    position: relative;
+    bottom:55px;
+  }
+
+  .off_screen{
+    display: none;
+    text-align: center;
+    font-family: Lato, Arial, sans-serif;
+    background-color: rgb(47, 53, 48);
+    height: 100vh;
+  }
+  .off_screen li{
+    padding: 50px;
+  }
+  .off_screen li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding:5px 10px;
+    border-radius: 3px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .on_screen li{
+    display: inline-block;
+    line-height: 80px;
+    color: white;
+  }
+
+  .on_screen li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding:5px 10px;
+    border-radius: 3px;
+    color: black;
+    }
+
+  a.active,a:hover{
+    background: #cde6c9;
+    transition: .5s;
+  } 
+
+  .menu-icon{
+    display: none;
+    position: relative;
+    left:90%;
+    bottom: 25px;
+    cursor: pointer;
+  }
+
+  .post{
+    font-family: Lato, Arial, sans-serif;
+    padding: 30px;
+    position: relative;
+    left: 5vw;
+    text-align: center;
+    width: 40vw;
+  }
+
+  .description{
+    font-family: Lato, Arial, sans-serif;
+    padding: 30px;
+    position: relative;
+    float:right;
+    right: 5vw;
+    bottom: 100vh;
+    text-align: center;
+    width: 40vw;
+  }
+
+  #opening_words{
+    width: 95vw;
+  }
+
+ .but{
+  width:40vw;
+ }
+
+  .next{
+    background-color: white;
+    float: right;
+    position: relative;
+    left: 5vw; 
+    width: 200px;
+    height: 100px;
+    border: none;
+    color: black;
+    border-radius: 10 px;
+    transition: ease-out;
+    font-size: 2rem;
+    outline: none;
+    border: 3px solid white;
+    z-index: 1;
+  }
+
+  .next:hover{
+    color: black;
+    cursor: pointer;
+  }
+
+  .next:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content: "";
+    background-color: whitesmoke;
+  }
+
+  .next:hover:before{
+    transition:0.5s all ease;
+    left: 0;
+    right:0;
+    opacity:1;
+    z-index:1;
+  }
+
+  .prev{
+    background-color: white;
+    position: relative;
+    left: 5vw;
+    width: 200px;
+    height: 100px;
+    border: none;
+    color: black;
+    border-radius: 10 px;
+    transition: ease-out;
+    font-size: 2rem;
+    outline: none;
+    border: 3px solid white;
+    z-index: 1;
+  }
+
+  .prev:hover{
+    color: black;
+    cursor: pointer;
+  }
+
+  .prev:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content: "";
+    background-color: whitesmoke;
+  }
+
+  .prev:hover:before{
+    transition:0.5s all ease;
+    left: 0;
+    right:0;
+    opacity:1;
+    z-index:1;
+  }
+
+
+  
+.createabranch{
+  padding:8px 12px;
+  background: #6fff52;
+  display: block;
+  width:120px;
+  margin:10px 0 0px 0;
+  border-radius:3px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align:center;
+  font-size:0.8em;
+  box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+  -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+  -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+}
+
+
+.createabranch:hover{
+  background:#8BC3A3;
+  color:black;
+}
+
+/* Send Button Styles */
+
+.createabranch{
+  width:180px;
+  display: block;
+  height: auto;
+  padding:15px;
+  color:#fff;
+    background-color: white;
+  border:none;
+  border-radius:3px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin:auto;
+  box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+  -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+  -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+}
+
+
+.createabranch:hover{
+  background:#111;
+  color: white;
+  border:none;
+}
+
+h2{
+  text-align: left;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+.createabranch:active{
+  opacity: 0.9;
+}
+
+
+  @media screen and (max-width: 768px) {
+    h1{
+      font-size: 30px;
+    }
+    .on_screen {
+      display: none; 
+  }
+  .menu-icon{
+    display: block;
+  }
+  .off_screen{
+    display: block;
+  }
+  .post{
+    position: relative;
+    width:90vw;
+    justify-content: center;
+  }
+  .description{
+    position: relative;
+    width: 90vw;
+    top: 5vh;
+  }
+  .but {
+    display: flex;
+    justify-content: space-between; /* Buttons will be on opposite sides */
+    width: 90vw; /* Take full screen width */
+    padding: 0 10px; /* Optional padding */
+  }
+
+  .prev, .next {
+    width: 100px; /* Set a fixed width for the buttons */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px; /* Add padding for better touch interaction */
+  }
+  }
+
+
+ 
