@@ -1,15 +1,17 @@
 {
-  "name": "blogwebsite",
+  "name": "writers-forest",
   "version": "1.0.0",
-  "description": "writers forest",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "Anshul Kannaujia",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^10.13.1",
-    "supervillains": "^4.0.0"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
   }
 }
