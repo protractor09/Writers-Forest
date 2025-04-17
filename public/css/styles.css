@@ -4,9 +4,10 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-
+/* #00a400 */
+/* #6fff52 */
 #logo {
-    background-color: #6fff52;
+    background-color: #00a400;
     margin: 0; 
 }
 
@@ -84,9 +85,9 @@
     font-family: Lato, Arial, sans-serif;
     padding: 30px;
     position: relative;
-    left: 5vw;
-    text-align: center;
-    width: 40vw;
+    left: 15vw;
+    text-align: justify;
+    width: 70vw;
   }
 
   .description{
@@ -96,7 +97,7 @@
     float:right;
     right: 5vw;
     bottom: 100vh;
-    text-align: center;
+    text-align: justify;
     width: 40vw;
   }
 
@@ -105,18 +106,18 @@
   }
 
  .but{
-  width:40vw;
+  width:100vw;
  }
 
   .next{
-    float: right;
+    margin-left: 65vw;
     font-size: 1.5rem;
     background: none;
     border: none;
   }
 
   .prev{
-    margin-left: 9vw;
+    margin-left: 15vw;
     font-size: 1.5rem;
     background: none;
     border: none;
@@ -124,54 +125,20 @@
   
   
 .createabranch{
-  padding:8px 12px;
-  background: #6fff52;
-  display: block;
-  width:120px;
-  margin:10px 0 0px 0;
-  border-radius:3px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align:center;
-  font-size:0.8em;
-  box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-  -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-  -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+  color: black;
+  font-size: 1.25rem;
+  background: none;
+  border: none;
 }
-
 
 .createabranch:hover{
-  background:#8BC3A3;
-  color:black;
+  opacity: 0.5;
 }
-
-/* Send Button Styles */
-
-.createabranch{
-  width:180px;
-  display: block;
-  height: auto;
-  padding:15px;
-  color:#fff;
-    background-color: white;
-  border:none;
-  border-radius:3px;
-  outline: none;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  margin:auto;
-  box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-  -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-  -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+.next:hover{
+  opacity: 0.5;
 }
-
-
-.createabranch:hover{
-  background:#111;
-  color: white;
-  border:none;
+.prev:hover{
+  opacity: 0.5;
 }
 
 h2{
@@ -184,43 +151,112 @@ h2{
   opacity: 0.9;
 }
 
+#content{
+  color: whitesmoke;
+  font-family: Lato, Arial, sans-serif;
+  padding: 0;
+  position: relative;
+  left: 15vw;
+  text-align: justify;
+  width: 70vw;
+}
 
-  @media screen and (max-width: 768px) {
-    h1{
-      font-size: 30px;
-    }
-    .on_screen {
-      display: none; 
+#title{
+  color: whitesmoke;
+  width: 60%;
+  font-family: Lato, Arial, sans-serif;
+  padding: 0.5vh;
+  position: relative;
+  left: 15vw;
+  text-align: justify;
+  width: 70vw;
+}
+
+
+@media screen and (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
-  .menu-icon{
+  
+  h1 {
+    font-size: 30px;
+    text-align: justify;
+  }
+
+  #logo{
+    height: 9vh;
+  }
+  
+  .on_screen {
+    display: none; 
+  }
+  
+  .menu-icon {
     display: block;
   }
-  .off_screen{
+  
+  .off_screen {
     display: block;
   }
-  .post{
+
+  .post, .description {
     position: relative;
-    width:90vw;
-    justify-content: center;
+    width: 100%; /* Slightly less than 100% to add margins */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    float: none;
+    margin: 0 auto; /* This centers the elements */
+    text-align: justify;
   }
-  .description{
-    position: relative;
-    width: 90vw;
-    top: 5vh;
+  
+  .description {
+    top: 0; /* Reset the top value */
+    margin-top: 20px; /* Add space between post and description */
   }
+  
   .but {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Buttons will be on opposite sides */
-    width: 90vw; /* Take full screen width */
-    padding: 0 10px; /* Optional padding */
+    justify-content: space-between;
   }
 
   .prev, .next {
-    width: 100px; /* Set a fixed width for the buttons */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px; /* Add padding for better touch interaction */
-  }
+    margin: 0; /* Reset any margins */
+    width: auto;
+    font-size: 16px;
+    padding: 10px;
   }
 
+  .main-content {
+    text-align: justify;
+    width: 100%;
+    margin: 0 auto; /* Center the main content */
+  }
 
- 
+  #title{
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color:black;
+        color: whitesmoke;
+    }
+    button{
+      color: whitesmoke;
+    }
+
+    .createabranch{
+      color: whitesmoke;
+    }
+
+    #content,#title{
+      background: black;
+    }
+}

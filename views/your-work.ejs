@@ -32,16 +32,24 @@
 
         <div class="off_screen">
             <ul>
-                <li><a href="index.ejs">Home</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/your-work">Your Work</a></li>
+                <li><a href="/settings">Settings</a></li>
             </ul>
         </div>
 
-        <button class="createabranch">Create a branch</button>
-
-        <div class="postno"><p>your work 1</p></div>
 
 
-    <script src="/main.js"></script>
+            <form action="/your-work" method="post">
+            <h2 style="margin: 0; padding: 0;">Title</h2>
+            <input type="text" name="com" placeholder="Enter title" id="title"> 
+            <h2 style="margin: 0; padding: 0;">Post</h2>
+            <textarea name="ta" id="content" rows="10" cols="400" placeholder="Create post"></textarea>
+            <br>
+            <button class="createabranch" type="submit">Publish</button>
+            </form>            
 
+            <script src="/js/main.js"></script>
 </body>
 </html>

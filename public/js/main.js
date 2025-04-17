@@ -1,9 +1,9 @@
 document.querySelector('.menu-icon').addEventListener('click', function() {
     const menu = document.querySelector('.off_screen');
-    if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-    } else {
+    if (menu.style.display === 'none') {
         menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
     }
 });
 
