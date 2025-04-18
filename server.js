@@ -1,4 +1,3 @@
-// import {nanoid} from "nanoid";
 
 const express=require("express");
 const bodyParser=require("body-parser");
@@ -8,11 +7,8 @@ const app=express();
 const abtpg="idk what to write here yet";
 
 
-// const generatePostHash = () => nanoid(10); // makes hash for every new post
-
-
-let post;
-let title;
+let generatePostHash = 0;
+let posts=[];
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -20,7 +16,7 @@ app.use(express.static(path.join(__dirname,"public")));
 
 
 app.get("/",(req,res)=>{
-    res.render("index",{post_content:post,tit:title});
+    res.render("index",{posts:posts});
 })
 
 app.get("/about",(req,res)=>{
@@ -37,8 +33,13 @@ app.get("/your-work",(req,res)=>{
 
 app.post("/your-work",(req,res)=>{
 
-    post=req.body.ta;
-    title=req.body.com;
+    const p={
+        id:generatePostHash++,
+        post:req.body.ta,
+        title:req.body.com
+    }
+
+    posts.push(p);
 
     res.redirect("/");
 })

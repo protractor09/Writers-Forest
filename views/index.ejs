@@ -48,8 +48,10 @@
 
 <div class="main_content">
     <div class="post">
-        <h2><%=tit%></h2>
-        <p><%=post_content%></p>
+        <%posts.forEach(function(i){%>
+        <h2> <%=i.title%> </h2>
+        <p> <%=i.post%> </p>
+        <%});%>
     </div>
 
 
@@ -70,6 +72,7 @@
     <button type="submit" id="sub_but">submit</button>
 </div> 
 
+<% console.log(posts)%>
 
 <script src="/js/main.js"></script>
 </body>
