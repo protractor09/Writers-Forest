@@ -114,6 +114,7 @@
     font-size: 1.5rem;
     background: none;
     border: none;
+    transition: opacity 0.2s ease;
   }
 
   .prev{
@@ -121,6 +122,7 @@
     font-size: 1.5rem;
     background: none;
     border: none;
+    transition: opacity 0.2s ease;
   }
   
   
@@ -134,11 +136,16 @@
 .createabranch:hover{
   opacity: 0.5;
 }
+
+/* Modified hover effects for next and prev buttons */
 .next:hover{
-  opacity: 0.5;
+  opacity: 0.8;
+  background: none;
 }
+
 .prev:hover{
-  opacity: 0.5;
+  opacity: 0.8;
+  background: none;
 }
 
 h2{
@@ -236,10 +243,6 @@ h2{
     text-align: justify;
     width: 100%;
     margin: 0 auto; /* Center the main content */
-  }
-
-  #title{
-    width: 100%;
   }
 }
 

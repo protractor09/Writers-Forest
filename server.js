@@ -4,20 +4,27 @@ const bodyParser=require("body-parser");
 const path=require("path");
 const app=express();
 
-const abtpg="idk what to write here yet";
-
+const abtpg="hello";
 
 let generatePostHash = 0;
-let posts=[];
+var posts=[];
+
+
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"public")));
 
 
-app.get("/",(req,res)=>{
-    res.render("index",{posts:posts});
-})
+app.get("/", (req, res) => {
+    const index = parseInt(req.query.index) || 0;
+    const postToShow = posts.length > 0 ? posts[index % posts.length] : null;
+    res.render("index", {
+        post: postToShow,
+        currentIndex: index,
+        hasPosts: posts.length > 0
+    });
+});
 
 app.get("/about",(req,res)=>{
     res.render("about",{abt:abtpg});
@@ -36,7 +43,7 @@ app.post("/your-work",(req,res)=>{
     const p={
         id:generatePostHash++,
         post:req.body.ta,
-        title:req.body.com
+        title:req.body.com,
     }
 
     posts.push(p);

@@ -48,17 +48,22 @@
 
 <div class="main_content">
     <div class="post">
-        <%posts.forEach(function(i){%>
-        <h2> <%=i.title%> </h2>
-        <p> <%=i.post%> </p>
-        <%});%>
+        <% if (hasPosts && post) { %>
+            <h2><%= post.title %></h2>
+            <pre><%= post.post %></pre>
+        <% } else { %>
+            <p>No posts yet.</p>
+        <% } %>
     </div>
 
 
-<div class="but">
-    <button class="prev">previous</button>
-    <button class="next">next</button>
-</div>
+    <div class="but">
+        <% if (hasPosts) { %>
+            <% let prevIndex = currentIndex - 1 < 0 ? 0 : currentIndex - 1; %>
+            <a href="/?index=<%= prevIndex %>"><button class="prev">Previous</button></a>
+            <a href="/?index=<%= currentIndex + 1 %>"><button class="next">Next</button></a>
+        <% } %>
+    </div>
 
 </div>
 
@@ -68,11 +73,9 @@
 
 <div class="comments">
     <h2>Comments</h2>
-    <input type="text" id="inp_text">
+    <input name="comment" type="text" id="inp_text">
     <button type="submit" id="sub_but">submit</button>
 </div> 
-
-<% console.log(posts)%>
 
 <script src="/js/main.js"></script>
 </body>
