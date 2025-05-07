@@ -4,6 +4,8 @@ const bodyParser=require("body-parser");
 const path=require("path");
 const app=express();
 
+const port = process.env.PORT || 3000;
+
 const abtpg="hello";
 
 let generatePostHash = 0;
@@ -51,6 +53,6 @@ app.post("/your-work",(req,res)=>{
     res.redirect("/");
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("port started on 3000");
 })
