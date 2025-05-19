@@ -13,14 +13,7 @@ Writers Forest is a cozy digital space for poets and writers to share their crea
 
 🚀 Getting Started (Local Setup)
 
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/your-username/writers-forest.git
-cd writers-forest
-Install dependencies:
+<pre> ### 🚀 Clone the Repository ```bash git clone https://github.com/protractor09/Writers-Forest.git cd your-repo-name ``` </pre>
 
 bash
 Copy
