@@ -11,18 +11,9 @@ Writers Forest is a cozy digital space for poets and writers to share their crea
 
 📖 Browse and enjoy poems from various writers
 
-🚀 Getting Started (Local Setup)
+⚙️ Tech Stack
+Backend: Node.js, Express.js
 
-<pre> ### 🚀 Clone the Repository ```bash git clone https://github.com/protractor09/Writers-Forest.git cd writers-forest ``` </pre>
+Frontend: EJS, CSS
 
-bash
-Copy
-Edit
-npm install
-Run the server:
-
-bash
-Copy
-Edit
-node app.js
-Open your browser at http://localhost:3000
+Hosting: Render
