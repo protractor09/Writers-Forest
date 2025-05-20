@@ -51,6 +51,7 @@
         <% if (hasPosts && post) { %>
             <h2><%= post.title %></h2>
             <pre><%= post.post %></pre>
+            <pre class="writer-signature"> &mdash; <%= post.writer %></pre>
         <% } else { %>
             <p>No posts yet.</p>
         <% } %>

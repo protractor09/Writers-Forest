@@ -87,7 +87,7 @@
     position: relative;
     left: 15vw;
     text-align: justify;
-    width: 70vw;
+    width: 60vw;
   }
 
   .description{
@@ -138,7 +138,7 @@
 }
 
 /* Modified hover effects for next and prev buttons */
-.next:hover{
+/* .next:hover{
   opacity: 0.8;
   background: none;
 }
@@ -146,7 +146,7 @@
 .prev:hover{
   opacity: 0.8;
   background: none;
-}
+} */
 
 h2{
   text-align: left;
@@ -179,6 +179,35 @@ h2{
   width: 70vw;
 }
 
+#writer{
+    color: whitesmoke;
+    width: 15vw;
+    font-family: Lato, Arial, sans-serif;
+    padding: 0.5vh;
+    position: relative;
+    left: 70vw;
+    text-align: justify;
+  }
+  
+
+.writer-signature {
+    text-align: right;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.writer-signature p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/* Optional: Add a subtle styling to make the signature stand out */
+.writer-signature p {
+    color: #666;
+    font-family: 'Lato', sans-serif;
+}
+
 
 @media screen and (max-width: 768px) {
   * {
@@ -195,6 +224,12 @@ h2{
 
   #logo{
     height: 9vh;
+  }
+
+  #writer{
+    width: 25vw;
+    left: 60vw;
+    text-align: justify;
   }
   
   .on_screen {
@@ -259,7 +294,7 @@ h2{
       color: whitesmoke;
     }
 
-    #content,#title{
+    #content,#title,#writer{
       background: black;
     }
 }

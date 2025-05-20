@@ -12,19 +12,19 @@ let generatePostHash = 0;
 var posts=[];
 
 
-
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"public")));
 
 
 app.get("/", (req, res) => {
-    const index = parseInt(req.query.index) || 0;
+    const index = parseInt(req.query.index) || 0;   
     const postToShow = posts.length > 0 ? posts[index % posts.length] : null;
     res.render("index", {
         post: postToShow,
         currentIndex: index,
-        hasPosts: posts.length > 0
+        hasPosts: posts.length > 0,
+        writername: postToShow?postToShow.writer:""
     });
 });
 
@@ -46,6 +46,7 @@ app.post("/your-work",(req,res)=>{
         id:generatePostHash++,
         post:req.body.ta,
         title:req.body.com,
+        writer:req.body.wri
     }
 
     posts.push(p);
