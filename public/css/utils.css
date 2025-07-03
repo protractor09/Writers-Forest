@@ -1,0 +1,43 @@
+.text-center {
+    text-align: center;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .bg-white {
+    background-color: white;
+  }
+  
+  .bg-green {
+    background-color: #00a400;
+  }
+  
+  .rounded {
+    border-radius: 5px;
+  }
+  
+  .shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .padding {
+    padding: 10px;
+  }
+  
+  .margin-auto {
+    margin: 0 auto;
+  }
+  
+  .width-60 {
+    width: 60%;
+  }
+  
+  .width-90 {
+    width: 90%;
+  }
+  
+  .font-lato {
+    font-family: 'Lato', Arial, sans-serif;
+  }

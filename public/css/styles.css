@@ -1,300 +1,310 @@
-*{
-  margin: 0px;
-  padding: 0px;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   max-width: 100%;
 }
-/* #00a400 */
-/* #6fff52 */
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+}
+
 #logo {
-    background-color: #00a400;
-    margin: 0; 
+  background-color: #1f1f1f; /* Darker header */
+  padding: 10px 20px;
 }
 
-  nav{
-    list-style: none;
-    font-family: Lato, Arial, sans-serif;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-  }
-
-  h1{
-    font-size: 1.5rem;
-    font-family: Lato, Arial, sans-serif;
-    position: relative;
-    left: 1vw;
-    width: 400px;
-    color: black;
-    max-width: 70%;
-  }
-
-  .on_screen{
-    float: right;
-    margin-right: 20px;
-    position: relative;
-    bottom:55px;
-  }
-
-  .off_screen{
-    display: none;
-    text-align: center;
-    font-family: Lato, Arial, sans-serif;
-    background-color: rgb(47, 53, 48);
-    height: 100vh;
-  }
-  .off_screen li{
-    padding: 50px;
-  }
-  .off_screen li a{
-    text-decoration: none;
-    text-transform: uppercase;
-    padding:5px 10px;
-    border-radius: 3px;
-    color: white;
-    font-size: 20px;
-  }
-
-  .on_screen li{
-    display: inline-block;
-    line-height: 80px;
-    color: white;
-  }
-
-  .on_screen li a{
-    text-decoration: none;
-    text-transform: uppercase;
-    padding:5px 10px;
-    border-radius: 3px;
-    color: black;
-    }
-
-  a.active,a:hover{
-    background: #cde6c9;
-    transition: .5s;
-  } 
-
-  .menu-icon{
-    display: none;
-    position: relative;
-    left:90%;
-    bottom: 25px;
-    cursor: pointer;
-  }
-
-  .post{
-    font-family: Lato, Arial, sans-serif;
-    padding: 30px;
-    position: relative;
-    left: 15vw;
-    text-align: justify;
-    width: 60vw;
-  }
-
-  .description{
-    font-family: Lato, Arial, sans-serif;
-    padding: 30px;
-    position: relative;
-    float:right;
-    right: 5vw;
-    bottom: 100vh;
-    text-align: justify;
-    width: 40vw;
-  }
-
-  #opening_words{
-    width: 95vw;
-  }
-
- .but{
-  width:100vw;
- }
-
-  .next{
-    margin-left: 65vw;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    transition: opacity 0.2s ease;
-  }
-
-  .prev{
-    margin-left: 15vw;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    transition: opacity 0.2s ease;
-  }
-  
-  
-.createabranch{
-  color: black;
-  font-size: 1.25rem;
-  background: none;
-  border: none;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.createabranch:hover{
-  opacity: 0.5;
+h1 {
+  font-size: 1.8rem;
+  color: #e0e0e0; /* Light text for the header */
 }
 
-/* Modified hover effects for next and prev buttons */
-/* .next:hover{
-  opacity: 0.8;
-  background: none;
-}
-
-.prev:hover{
-  opacity: 0.8;
-  background: none;
-} */
-
-h2{
-  text-align: left;
-  padding-left: 30px;
-  padding-bottom: 10px;
-}
-
-.createabranch:active{
-  opacity: 0.9;
-}
-
-#content{
-  color: whitesmoke;
-  font-family: Lato, Arial, sans-serif;
+.on_screen ul,
+.off_screen ul {
+  list-style: none;
   padding: 0;
-  position: relative;
-  left: 15vw;
-  text-align: justify;
-  width: 70vw;
 }
 
-#title{
-  color: whitesmoke;
+.on_screen li,
+.off_screen li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.on_screen li a,
+.off_screen li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #e0e0e0; /* Light text for links */
+  font-size: 1rem;
+}
+
+a.active,
+a:hover {
+  background: #333333; /* Slightly lighter hover effect */
+  transition: 0.3s;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.post {
+  position: relative;
+  padding: 30px;
+  margin: 20px auto;
   width: 60%;
-  font-family: Lato, Arial, sans-serif;
-  padding: 0.5vh;
-  position: relative;
-  left: 15vw;
-  text-align: justify;
-  width: 70vw;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-#writer{
-    color: whitesmoke;
-    width: 15vw;
-    font-family: Lato, Arial, sans-serif;
-    padding: 0.5vh;
-    position: relative;
-    left: 70vw;
-    text-align: justify;
-  }
-  
+.post-content {
+  position: relative;
+  min-height: 100px; /* Adjust based on your needs */
+}
 
 .writer-signature {
-    text-align: right;
-    margin-top: 10px;
-    font-style: italic;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  /* font-style: italic; */
+  color: #a0a0a0;
+  /* font-family: 'Playfair Display', serif; */
+  padding: 10px 0;
 }
 
-.writer-signature p {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+.writer-signature span {
+  font-size: 0.9rem;
 }
 
-/* Optional: Add a subtle styling to make the signature stand out */
-.writer-signature p {
-    color: #666;
-    font-family: 'Lato', sans-serif;
+.comments {
+  margin: 20px auto;
+  width: 60%;
+  background: #1e1e1e; /* Dark comments background */
+  color: #e0e0e0; /* Light text */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow */
+  padding: 20px;
 }
+
+.comments h2 {
+  margin-bottom: 10px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #e0e0e0; /* Light text */
+}
+
+.comments input,
+.comments button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #444; /* Darker border */
+  border-radius: 5px;
+  background-color: #2a2a2a; /* Darker input background */
+  color: #e0e0e0; /* Light text */
+}
+
+.comments button {
+  background-color: #00a400; /* Green button */
+  color: white;
+  cursor: pointer;
+}
+
+.comments button:hover {
+  background-color: #007a33; /* Darker green on hover */
+}
+
+.comments ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comments ul li {
+  background-color: #2a2a2a; /* Darker comment background */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #444; /* Darker border */
+  border-radius: 5px;
+  color: #e0e0e0; /* Light text */
+}
+
+
+
+
+
+
+
+
+
+
+/* Add these styles for the navigation buttons */
+.but {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 20px auto;
+  gap: 10px;
+}
+
+.prev,
+.next {
+  padding: 10px 20px;
+  background-color: #00a400;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 120px;
+  text-align: center;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #007a33;
+}
+
+/* Update the button container for mobile */
+@media screen and (max-width: 768px) {
+  .but {
+      width: 90%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.post-form {
+    width: 60%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.post-form h2 {
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+.post-form input,
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1.5rem;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-family: 'Lato', Arial, sans-serif;
+}
+
+.post-form textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+    outline: none;
+    border-color: #00a400;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00a400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Lato', Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #007a33;
+}
+
+@media screen and (max-width: 768px) {
+    .post-form {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+
+
+
+
+
 
 
 @media screen and (max-width: 768px) {
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-  
-  h1 {
-    font-size: 30px;
-    text-align: justify;
+
+  .post {
+    width: 90%;
+    padding: 20px;
   }
 
-  #logo{
-    height: 9vh;
+ .writer-signature {
+    position: relative;
+    text-align: right;
+    margin-top: 20px;
   }
 
-  #writer{
-    width: 25vw;
-    left: 60vw;
-    text-align: justify;
+
+  .comments {
+    width: 90%;
   }
-  
-  .on_screen {
-    display: none; 
-  }
-  
+
   .menu-icon {
     display: block;
   }
-  
+
+  .on_screen {
+    display: none;
+  }
+
   .off_screen {
     display: block;
+    background-color: #1f1f1f; /* Darker off-screen menu */
+    color: #e0e0e0; /* Light text */
+    height: 100vh;
+    text-align: center;
   }
 
-  .post, .description {
-    position: relative;
-    width: 100%; /* Slightly less than 100% to add margins */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    float: none;
-    margin: 0 auto; /* This centers the elements */
-    text-align: justify;
+  .off_screen li {
+    padding: 20px;
   }
-  
-  .description {
-    top: 0; /* Reset the top value */
-    margin-top: 20px; /* Add space between post and description */
-  }
-  
-  .but {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .prev, .next {
-    margin: 0; /* Reset any margins */
-    width: auto;
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .main-content {
-    text-align: justify;
-    width: 100%;
-    margin: 0 auto; /* Center the main content */
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color:black;
-        color: whitesmoke;
-    }
-    button{
-      color: whitesmoke;
-    }
-
-    .createabranch{
-      color: whitesmoke;
-    }
-
-    #content,#title,#writer{
-      background: black;
-    }
 }

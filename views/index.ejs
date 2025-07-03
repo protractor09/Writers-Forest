@@ -50,33 +50,57 @@
     <div class="post">
         <% if (hasPosts && post) { %>
             <h2><%= post.title %></h2>
-            <pre><%= post.post %></pre>
-            <pre class="writer-signature"> &mdash; <%= post.writer %></pre>
+            <div class="post-content">
+                <pre><%= post.post %></pre>
+                <div class="writer-signature">
+                    <span>&mdash; <%= post.writer %></span>
+                </div>
+            </div>
         <% } else { %>
             <p>No posts yet.</p>
         <% } %>
     </div>
 
-
     <div class="but">
         <% if (hasPosts) { %>
             <% let prevIndex = currentIndex - 1 < 0 ? 0 : currentIndex - 1; %>
-            <a href="/?index=<%= prevIndex %>"><button class="prev">Previous</button></a>
-            <a href="/?index=<%= currentIndex + 1 %>"><button class="next">Next</button></a>
+            <a href="/?index=<%= prevIndex %>">
+                <button class="prev">Previous</button>
+            </a>
+            <a href="/?index=<%= currentIndex + 1 %>">
+                <button class="next">Next</button>
+            </a>
         <% } %>
     </div>
-
 </div>
 
 <br>
 <br>
 <br>
 
-<div class="comments">
-    <h2>Comments</h2>
-    <input name="comment" type="text" id="inp_text">
-    <button type="submit" id="sub_but">submit</button>
-</div> 
+<!-- filepath: c:\Users\anshu\OneDrive\Desktop\Writers Forest\Writers-Forest\views\index.ejs -->
+<div class="comments bg-dark rounded shadow padding width-60 margin-auto">
+    <h2 class="text-center">Comments</h2>
+    <% if (post) { %>
+        <form action="/comments" method="post">
+            <input type="hidden" name="postId" value="<%= post.id %>">
+            <input type="hidden" name="index" value="<%= currentIndex %>">
+            <input name="comment" type="text" placeholder="Write your comment..." required>
+            <button type="submit">Submit</button>
+        </form>
+        <ul>
+            <% if (comments && comments.length > 0) { %>
+                <% comments.forEach(comment => { %>
+                    <li><%= comment %></li>
+                <% }) %>
+            <% } else { %>
+                <li>No comments yet. Be the first to comment!</li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <p>No post selected to comment on.</p>
+    <% } %>
+</div>
 
 <script src="/js/main.js"></script>
 </body>

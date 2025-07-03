@@ -11,6 +11,8 @@ const abtpg="hello";
 let generatePostHash = 0;
 var posts=[];
 
+let comments = {};
+
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -20,11 +22,40 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get("/", (req, res) => {
     const index = parseInt(req.query.index) || 0;   
     const postToShow = posts.length > 0 ? posts[index % posts.length] : null;
+    const postComments= postToShow?comments[postToShow.id] || [] : [];
     res.render("index", {
         post: postToShow,
         currentIndex: index,
         hasPosts: posts.length > 0,
-        writername: postToShow?postToShow.writer:""
+        writername: postToShow?postToShow.writer:"",
+        comments: postComments
+    });
+});
+
+app.post("/comments", (req, res) => {
+    const { comment, postId, index } = req.body;
+    
+    // Initialize array for this post's comments if it doesn't exist
+    if (!comments[postId]) {
+        comments[postId] = [];
+    }
+    
+    // Add the new comment to the array for this post
+    comments[postId].push(comment);
+    
+    // Redirect back to the same post
+    res.redirect(`/?index=${index}`);
+});
+
+app.get("/", (req, res) => {
+    const index = parseInt(req.query.index) || 0;   
+    const postToShow = posts.length > 0 ? posts[index % posts.length] : null;
+    res.render("index", {
+        post: postToShow,
+        currentIndex: index,
+        hasPosts: posts.length > 0,
+        writername: postToShow ? postToShow.writer : "",
+        comments: comments
     });
 });
 

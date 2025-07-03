@@ -40,17 +40,37 @@
         </div>
 
 
-
-            <form action="/your-work" method="post">
-            <h2 style="margin: 0; padding: 0;">Title</h2>
-            <input type="text" name="com" placeholder="Enter title" id="title"> 
-            <h2 style="margin: 0; padding: 0;">Post</h2>
-            <textarea name="ta" id="content" rows="10" cols="400" placeholder="Create post"></textarea>
-            <br>
-            <input type="text" name="wri" placeholder="Your pen name" id="writer"> 
-            <br>
-            <button class="createabranch" type="submit">Publish</button>
-            </form>            
+            <div class="main_content">
+                <form action="/your-work" method="post" class="post-form">
+                    <h2>Title</h2>
+                    <input 
+                        type="text" 
+                        name="com" 
+                        placeholder="Enter title" 
+                        id="title" 
+                        required
+                    >
+                    
+                    <h2>Post</h2>
+                    <textarea 
+                        name="ta" 
+                        id="content" 
+                        rows="10" 
+                        placeholder="Create post"
+                        required
+                    ></textarea>
+                    
+                    <input 
+                        type="text" 
+                        name="wri" 
+                        placeholder="Your pen name" 
+                        id="writer" 
+                        required
+                    >
+                    
+                    <button class="submit-btn" type="submit">Publish</button>
+                </form>
+            </div>
 
             <script src="/js/main.js"></script>
 </body>
