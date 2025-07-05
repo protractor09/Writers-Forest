@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth > 768) {
             offScreenMenu.style.display = 'none';
             onScreenMenu.style.display = 'block';
-            menuIcon.style.display = 'none';
+            menuIcon.style.display = 'none'; // Hide menu icon on larger screens
         } else {
             onScreenMenu.style.display = 'none';
-            menuIcon.style.display = 'block';
-            offScreenMenu.style.display = 'none'; // keep it hidden unless clicked
+            menuIcon.style.display = 'block'; // Show menu icon on smaller screens
+            offScreenMenu.style.display = 'none'; // Keep off-screen menu hidden unless toggled
         }
     }
 
@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', adjustMenu);
 
     menuIcon.addEventListener('click', () => {
-        if (offScreenMenu.style.display === 'none') {
-            offScreenMenu.style.display = 'block';
+        if (offScreenMenu.style.display === 'none' || offScreenMenu.style.display === '') {
+            offScreenMenu.style.display = 'block'; // Show the menu
         } else {
-            offScreenMenu.style.display = 'none';
+            offScreenMenu.style.display = 'none'; // Hide the menu
         }
     });
 });

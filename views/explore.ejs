@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="utils.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48">
+    <title>Explore</title>
+</head>
+<body>
+    <nav id="logo">
+        <h1>Explore</h1>
+        <div id="check" class="menu-icon">
+            <i class="fa fa-bars" style="font-size: 22px;"></i>
+        </div>
+        
+        <div class="on_screen">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/explore">Explore</a></li>
+                <li><a href="/your-work">Your Work</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="off_screen">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/explore">Explore</a></li>
+            <li><a href="/your-work">Your Work</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </div>
+
+    <div class="main_content">
+        <% if (posts && posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <div class="post">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.post %></p>
+                    <div class="writer-signature">
+                        <span>&mdash; <%= post.writer %></span>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No featured posts available.</p>
+        <% } %>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
