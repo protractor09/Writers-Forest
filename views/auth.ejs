@@ -8,16 +8,365 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48">
-    <title>Explore</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color:  #1e1e1e;
+      color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .main-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left side - Brand */
+    .brand-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #1e1e1e;
+      position: relative;
+      padding: 2rem;
+    }
+
+    .brand-content {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .brand-title {
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      letter-spacing: -1px;
+    }
+
+    .brand-subtitle {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 3rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .brand-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #3c3c3c;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    /* Right side - Auth */
+    .auth-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:  #1e1e1e;
+      padding: 2rem;
+    }
+
+    .auth-container {
+      background-color:  #1e1e1e;
+      padding: 3rem;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 450px;
+      border: 1px solid #4a4a4a;
+    }
+
+    .auth-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .auth-title {
+      font-family: 'Lato', Arial, sans-serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .auth-subtitle {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background-color: #4a4a4a;
+      border: 1px solid #5a5a5a;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+      outline: none;
+      border-color: #28a745;
+      background-color: #525252;
+    }
+
+    input::placeholder {
+      color: #888888;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.875rem;
+      background-color:#00a400;
+      color: #ffffff;
+      border: none;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #00a400;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .toggle-section {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #4a4a4a;
+    }
+
+    .toggle-text {
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .toggle-link {
+      color: #00a400;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .toggle-link:hover {
+      color: #00a400;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+      
+      .brand-section {
+        flex: 0 0 40%;
+        padding: 1.5rem;
+      }
+      
+      .brand-title {
+        font-size: 2.5rem;
+      }
+      
+      .brand-features {
+        display: none;
+      }
+      
+      .auth-section {
+        flex: 1;
+        padding: 1rem;
+      }
+      
+      .auth-container {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-title {
+        font-size: 2rem;
+      }
+      
+      .auth-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <form action="">
-            <label>User id</label>
-            <input type="text" name="userId" placeholder="Enter your user id" required>
-            <label >Password</label>
-            <input type="password" name="password" placeholder="Enter your password" required>
-        </form>
+  <div class="main-container">
+    <!-- Left Brand Section -->
+    <div class="brand-section">
+      <div class="brand-content">
+        <h1 class="brand-title">Writers Forest</h1>
+        <p class="brand-subtitle">A platform where writers connect, create, and share their stories with a community of like-minded individuals.</p>
+        
+        <div class="brand-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa fa-edit"></i>
+            </div>
+            <span>Write and publish your stories</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa fa-users"></i>
+            </div>
+            <span>Connect with fellow writers</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa fa-comments"></i>
+            </div>
+            <span>Get feedback on your work</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa fa-trophy"></i>
+            </div>
+            <span>Participate in writing challenges</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Right Auth Section -->
+    <div class="auth-section">
+      <div class="auth-container">
+        <div class="auth-header">
+          <h2 class="auth-title" id="form-title">Welcome Back</h2>
+          <p class="auth-subtitle" id="form-subtitle">Sign in to continue your writing journey</p>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="login-form" action="/login" method="POST">
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" name="userId" placeholder="Enter your user ID" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+          </div>
+
+          <button type="submit" class="btn">Sign In</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" action="/signup" method="POST" style="display: none;">
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" name="userId" placeholder="Choose a unique user ID" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Enter your email address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Create a password" required>
+          </div>
+
+          <button type="submit" class="btn">Create Account</button>
+        </form>
+
+        <!-- Toggle Section -->
+        <div class="toggle-section">
+          <p class="toggle-text" id="toggle-text">Don't have an account?</p>
+          <a class="toggle-link" id="toggle-link" onclick="toggleForm()">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const formTitle = document.getElementById('form-title');
+      const formSubtitle = document.getElementById('form-subtitle');
+      const toggleText = document.getElementById('toggle-text');
+      const toggleLink = document.getElementById('toggle-link');
+
+      if (loginForm.style.display === 'none') {
+        // Show login form
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        formTitle.innerText = 'Welcome Back';
+        formSubtitle.innerText = 'Sign in to continue your writing journey';
+        toggleText.innerText = "Don't have an account?";
+        toggleLink.innerText = "Sign up";
+      } else {
+        // Show signup form
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        formTitle.innerText = 'Join Writers Forest';
+        formSubtitle.innerText = 'Create your account and start writing';
+        toggleText.innerText = "Already have an account?";
+        toggleLink.innerText = "Sign in";
+      }
+    }
+  </script>
 </body>
 </html>

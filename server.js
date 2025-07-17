@@ -12,6 +12,7 @@ var posts=[];
 
 let comments = {};
 
+let users = []; // Dummy in-memory user store
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -34,6 +35,39 @@ app.get("/", (req, res) => {
         console.error("Error in GET /:", error);
         res.status(500).send("Internal Server Error");
     }
+});
+
+
+// GET landing page (Login/Signup)
+app.get("/auth", (req, res) => {
+    res.render("auth");
+});
+
+// POST: Login
+app.post("/login", (req, res) => {
+    const { userId, password } = req.body;
+    const user = users.find(u => u.userId === userId && u.password === password);
+
+    if (user) {
+        // Redirect to homepage or dashboard
+        res.redirect(`/?writer=${userId}`);
+    } else {
+        res.status(401).send("Invalid credentials");
+    }
+});
+
+// POST: Signup
+app.post("/signup", (req, res) => {
+    const { userId, email, password } = req.body;
+
+    const userExists = users.find(u => u.userId === userId || u.email === email);
+    if (userExists) {
+        return res.status(400).send("User already exists");
+    }
+
+    const newUser = { userId, email, password };
+    users.push(newUser);
+    res.redirect(`/auth`);
 });
 
 app.post("/comments", (req, res) => {
