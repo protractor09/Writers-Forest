@@ -1,9 +1,15 @@
-const express=require("express");
-const bodyParser=require("body-parser");
-const path=require("path");
-const {v4: uuidv4}= require('uuid');
-const app=express();
+import express from "express";
+import bodyParser from "body-parser";
+import path from "path";
+import { v4 as uuidv4 } from "uuid";
+import { fileURLToPath } from "url";
+import { fetch , insert_user_info , del_user_info , get_user_info, insert_post_info, user_exists } from "./supabase_client.js";
 
+// Required for __dirname in ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
 const port = process.env.PORT || 3000;
 
 const abtpg="";
@@ -11,8 +17,6 @@ const abtpg="";
 var posts=[];
 
 let comments = {};
-
-let users = []; // Dummy in-memory user store
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -44,9 +48,11 @@ app.get("/auth", (req, res) => {
 });
 
 // POST: Login
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
     const { userId, password } = req.body;
-    const user = users.find(u => u.userId === userId && u.password === password);
+    // const user = users.find(u => u.userId === userId && u.password === password);
+    const user = await get_user_info(userId, password);
+    console.log("from server.js",user);
 
     if (user) {
         // Redirect to homepage or dashboard
@@ -57,16 +63,18 @@ app.post("/login", (req, res) => {
 });
 
 // POST: Signup
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
     const { userId, email, password } = req.body;
 
-    const userExists = users.find(u => u.userId === userId || u.email === email);
+    // const userExists = users.find(u => u.userId === userId || u.email === email);
+
+    const userExists = await user_exists(email);
+
     if (userExists) {
         return res.status(400).send("User already exists");
     }
 
-    const newUser = { userId, email, password };
-    users.push(newUser);
+    const newUser = await insert_user_info(uuidv4(), userId, password, email);
     res.redirect(`/auth`);
 });
 
@@ -146,16 +154,16 @@ app.get("/your-work", (req, res) => {
     }
 });
 
-app.post("/your-work", (req, res) => {
+app.post("/your-work", async (req, res) => {
     try {
+        const { userId, password } = req.body;
         const p = {
             id: uuidv4(),
             post: req.body.ta,
             title: req.body.com,
             writer: req.body.wri
         };
-        console.log(p);
-        posts.push(p);
+        await insert_post_info(userId,p.id,p.writer,p.post,p.post,p.title);
         res.redirect("/");
     } catch (error) {
         console.error("Error in POST /your-work:", error);
